@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title id="dynamicTitle">SMAN 1 Lemahabang - Portal Akademik</title>
+    <meta name="description" id="dynamicDesc" content="Portal data akademik dan informasi resmi sekolah.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" id="ogTitle" content="Portal Resmi Sekolah">
+    <meta property="og:description" id="ogDesc" content="Portal data akademik dan informasi resmi sekolah.">
+
+    <div id="analyticsScriptContainer"></div>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#38a39e">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" alt="Logo Tut Wuri" class="logo-img">
+                <div class="logo-text">
+                    <h1>SMAN 1 LEMAHABANG</h1>
+                    <p>Kabupaten Cirebon</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#berita">Berita</a></li>
+                    <li><a href="#guru">Direktori Guru</a></li>
+                    <li><a href="#akademik">Akademik</a></li>
+                    <li><a href="#komunikasi">Komunikasi</a></li>
+                    <li><a href="#spmb">SPMB</a></li>
+                    <li><a href="#ptsp">PTSP</a></li>
+                    <li><a href="#kelulusan">Kelulusan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <section id="berita" class="profile-section">
+            <h2><i class="fas fa-newspaper"></i> Berita & Artikel Terbaru</h2>
+            <div class="grid-container g-3" id="newsGrid">
+                </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="guru" class="profile-section">
+            <h2><i class="fas fa-users"></i> Direktori Guru & Staff</h2>
+            <div class="grid-container g-4" id="guruGrid">
+                </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="akademik" class="profile-section">
+            <h2><i class="fas fa-graduation-cap"></i> Data & Kalender Akademik</h2>
+            <div class="grid-container g-2">
+                <div class="card">
+                    <h3><i class="fas fa-calendar-alt"></i> Agenda Pendidikan Terdekat</h3>
+                    <ul class="agenda-list" id="agendaContainer">
+                        </ul>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-cloud-download-alt"></i> Unduh Silabus & Materi Pembelajaran</h3>
+                    <div id="silabusContainer">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="komunikasi" class="profile-section">
+            <h2><i class="fas fa-comments"></i> Hubungan Masyarakat & Komunikasi</h2>
+            <div class="grid-container g-2">
+                <div>
+                    <div class="card" style="margin-bottom: 20px;">
+                        <h3><i class="fas fa-quote-left"></i> Apa Kata Mereka?</h3>
+                        <div class="testimonial-slider" id="testiContainer">
+                            </div>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-poll"></i> Polling Jajak Pendapat Sekolah</h3>
+                        <div id="pollingContainer">
+                            </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-headset"></i> Layanan Konsultasi Online</h3>
+                    <form id="formKonsultasi">
+                        <input type="text" id="chatNama" placeholder="Nama Anda" class="form-control" required>
+                        <textarea id="chatPesan" rows="3" placeholder="Tulis pesan atau pertanyaan Anda..." class="form-control" required></textarea>
+                        <button type="submit" class="btn-submit" style="width:100%;">Kirim Pesan</button>
+                    </form>
+                    <div id="chatResponseBox" style="margin-top:15px; font-size:13px; color:#555;"></div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="spmb" class="profile-section">
+            <h2><i class="fas fa-user-plus"></i> Aplikasi SPMB Online Lite</h2>
+            <div class="grid-container g-2">
+                <div class="card" style="border-top: 4px solid #f0ad4e; border-left: none;">
+                    <h3><i class="fas fa-edit"></i> Formulir Pendaftaran Calon Siswa</h3>
+                    <form id="formSPMB" style="margin-top: 15px;">
+                        <input type="text" id="spmbNama" placeholder="Nama Lengkap Calon Siswa" required class="form-control">
+                        <input type="text" id="spmbAsalSekolah" placeholder="Sekolah Asal (SMP/MTs)" required class="form-control">
+                        <select id="spmbJalur" class="form-control" required>
+                            <option value="Zonasi">Zonasi</option>
+                            <option value="Prestasi">Prestasi</option>
+                            <option value="Afirmasi">Afirmasi</option>
+                        </select>
+                        <input type="url" id="spmbLinkBerkas" placeholder="Link Drive Dokumen Persyaratan (Ijazah/KK)" class="form-control" required>
+                        <button type="submit" class="btn-submit" style="background-color: #f0ad4e; width: 100%;">Kirim Pendaftaran</button>
+                    </form>
+                </div>
+                <div class="card" style="border-top: 4px solid #38a39e; border-left: none;">
+                    <h3><i class="fas fa-bullhorn"></i> Status Pendaftaran & Hasil Seleksi</h3>
+                    <div style="display:flex; gap:15px; margin-top:15px;">
+                        <div style="flex:1; padding:15px; background:#d9534f; color:white; border-radius:4px;">
+                            <span style="font-size:12px;">Total Pendaftar</span>
+                            <h4 id="spmbCountTotal" style="font-size:20px; margin:5px 0 0 0;">0</h4>
+                        </div>
+                        <div style="flex:1; padding:15px; background:#5cb85c; color:white; border-radius:4px;">
+                            <span style="font-size:12px;">Kuota Pendaftaran</span>
+                            <h4 style="font-size:20px; margin:5px 0 0 0;">Terbatas</h4>
+                        </div>
+                    </div>
+                    <div id="spmbHasilBox" style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 4px; font-size:13px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="ptsp" class="profile-section">
+            <h2><i class="fas fa-id-card"></i> Pelayanan Terpadu Satu Pintu (PTSP)</h2>
+            <div class="grid-container g-2">
+                <div class="card" style="border-top: 4px solid #4e73df; border-left: none;">
+                    <h3><i class="fas fa-file-invoice"></i> Formulir Pengajuan Surat / Legalisir</h3>
+                    <form id="formPTSP" style="margin-top:15px;">
+                        <input type="text" id="ptspNama" placeholder="Nama Lengkap Pemohon" required class="form-control">
+                        <input type="text" id="ptspIdentitas" placeholder="NISN / NIP" required class="form-control">
+                        <select id="ptspLayanan" class="form-control" required>
+                            <option value="Permohonan Legalisir Ijazah">Permohonan Legalisir Ijazah</option>
+                            <option value="Surat Keterangan Aktif Siswa">Surat Keterangan Aktif Siswa</option>
+                            <option value="Surat Rekomendasi Beasiswa">Surat Rekomendasi Beasiswa</option>
+                        </select>
+                        <textarea id="ptspKeperluan" rows="2" placeholder="Keperluan penggunaan dokumen..." required class="form-control"></textarea>
+                        <button type="submit" class="btn-submit" style="background-color: #4e73df; width: 100%;">Kirim Pengajuan</button>
+                    </form>
+                </div>
+                <div class="card" style="border-top: 4px solid #36b9cc; border-left: none;">
+                    <h3><i class="fas fa-tasks"></i> Status Antrean Dokumen</h3>
+                    <div class="ptsp-tracking-dashboard" style="margin-top:15px;">
+                        <div class="ptsp-bar" style="background:#4e73df;">Belum Diproses <strong id="ptspCountBelum">0</strong></div>
+                        <div class="ptsp-bar" style="background:#f6c23e;">Sedang Diproses <strong id="ptspCountProses">0</strong></div>
+                        <div class="ptsp-bar" style="background:#1cc88a;">Selesai / Siap Ambil <strong id="ptspCountSelesai">0</strong></div>
+                    </div>
+                    <div id="ptspLiveFeed" style="margin-top:15px; font-size:13px; border-top:1px solid #eee; padding-top:10px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="kelulusan" class="profile-section" style="padding-bottom: 60px;">
+            <h2><i class="fas fa-graduation-cap"></i> Portal Kelulusan Mandiri</h2>
+            <div class="card" style="border-top: 4px solid #e74a3b; max-width: 550px; margin: 0 auto; text-align: center; border-left: none;">
+                <h3><i class="fas fa-search"></i> Cek Status Kelulusan Anda</h3>
+                <div style="display: flex; gap: 10px; margin: 15px 0;">
+                    <input type="text" id="inputCheckNISN" placeholder="Masukkan 10 Digit NISN" class="form-control" style="text-align: center; font-size: 16px; margin:0;">
+                    <button class="btn-submit" style="background-color: #e74a3b; margin:0; padding: 0 20px;" onclick="periksaKelulusanSiswa()">Periksa</button>
+                </div>
+                <div id="boxHasilKelulusan" style="display: none; padding: 15px; text-align: left; border-radius: 4px;"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

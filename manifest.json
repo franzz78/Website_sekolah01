@@ -1,0 +1,18 @@
+{
+  "short_name": "Portal SMAN1LA",
+  "name": "SMAN 1 Lemahabang Portal Resmi",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#f4f6f9",
+  "theme-color": "#38a39e",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+
